@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
-    private GameManager gm;
+    //private GameManager gm;
+    public GameManager Gm {get; set;}
 
     void OnCollisionEnter(Collision coll){
         if (coll.gameObject.tag == "Bullet") {
-            gm.SetScore (gm.GetScore () + 1);
+            // Gm.SetScore (Gm.GetScore () + 1);
+            Gm.Score++;
             Destroy (gameObject, 0.1f);
         }
         if (coll.gameObject.tag == "Floor") {
-            gm.SetMsg ("GameOver");
+           // Gm.SetMsg ("GameOver");
+           Gm.Msg = "GameOver";
         }
     }
 
-    public void SetGameManager(GameManager gm) {
-        this.gm = gm;
-    }
+    // public void SetGameManager(GameManager gm) {
+    //     this.gm = gm;
+    // }
 }

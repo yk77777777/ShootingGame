@@ -24,7 +24,7 @@ public class CubeGenerator : MonoBehaviour
                     Quaternion.identity
             );
             //GameManagerをセットする
-            obj.GetComponent<CubeController> ().SetGameManager(gm);
+            obj.GetComponent<CubeController> ().Gm = gm;
             //生成間隔時間停止
             yield return new WaitForSeconds (delta);
             //徐々に生成間隔を早める
